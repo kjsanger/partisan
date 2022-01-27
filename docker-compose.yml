@@ -4,6 +4,7 @@ services:
 
   irods:
     image: wsinpg/ub-18.04-irods-4.2.10
+    platform: linux/amd64
     restart: always
     ports:
       - "1247:1247"
@@ -12,5 +13,6 @@ services:
 
   app:
     build: .
+    platform: linux/amd64
     depends_on:
       - irods
